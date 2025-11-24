@@ -46,7 +46,7 @@ It recommends the **top 5 similar movies** based on a selected movie’s tags (g
 
 ## 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/movie-recommender-system.git
+git clone https://github.com/om-nagariya/movies-recommend-system.git
 cd movie-recommender-system
 ```
 
