@@ -205,3 +205,20 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ---------------------------------
+# CUSTOM RULES FOR MOVIE PROJECT
+# ---------------------------------
+
+# Large Data Files (Must ignore to prevent GitHub error)
+*.pkl
+similarity.pkl
+movies_data.pkl
+
+# Raw Datasets (Optional: Ignore if you want users to download from Kaggle)
+tmdb_5000_credits.csv
+tmdb_5000_movies.csv
+
+# IDE Settings (Uncommented from above)
+.idea/
+.vscode/
