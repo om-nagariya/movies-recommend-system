@@ -11,7 +11,7 @@ movies = pd.DataFrame(movies)
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 similarity = pd.DataFrame(similarity)
 
-api_key = "779aeb53a5b1103b811d418042862f48"    # Your api key
+api_key = ""    # Your api key
 
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key={}&language=en-US".format(movie_id, api_key)
@@ -71,3 +71,4 @@ if st.button('Recommend'):
     with col5:
         st.image(posters[4])
         st.text(names[4])
+
