@@ -4,3 +4,5 @@ numpy
 requests
 tabulate
 scikit-learn
+nltk
+
