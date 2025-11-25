@@ -34,28 +34,95 @@ It recommends the **top 5 similar movies** based on a selected movie’s tags (g
 ├── app.py # Main Streamlit application
 ├── tmdb_5000_credits.csv # Raw dataset (Credits)
 ├── tmdb_5000_movies.csv # Raw dataset (Movies)
-├── preprocess.ipynb # Jupyter Notebook for preprocessing
+├── data_preprocessing.ipynb # Preprocessing + generate PKL files
 ├── movies_data.pkl # Pre-processed dataframe (Pickle file)
 ├── similarity.pkl # Similarity matrix (Pickle file)
 ├── requirements.txt # List of dependencies
 └── README.md # Project documentation
 ```
+
 ---
 
 # 🔧 How to Run Locally
 
 ## 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/om-nagariya/movies-recommend-system.git
+git clone https://github.com/your-username/movie-recommender-system.git
 cd movie-recommender-system
 ```
 
 ## 2️⃣ Install dependencies
 ```bash 
-streamlit run app.py
+pip install -r requirements.txt
 ```
 
 ---
+
+# 📥 Download Required Datasets
+
+
+#### Raw datasets are not included in this repo because they exceed GitHub file size limit.
+#### Download them manually:
+
+| File | Download Link |
+|------|---------------|
+| **tmdb_5000_movies.csv** | https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata |
+| **tmdb_5000_credits.csv** | https://www.kaggle.com/datasets/moraismcl/tmdb-5000-credits |
+
+
+#### ➡ After downloading, place them directly in the project root directory (not inside any folder).
+
+---
+
+# 🧪 Preprocessing (If .pkl files are missing)
+
+If `movies_data.pkl` and `similarity.pkl` are NOT present, run preprocessing.
+
+## Step 1 — Open Jupyter Notebook
+```bash
+jupyter notebook
+```
+
+---
+
+## Step 2 — Run data_preprocessing.ipynb
+
+**This notebook:**
+
+- **Loads datasets**
+- **Extracts important fields**
+- **Cleans genres / cast / crew / keywords**
+- **Creates a combined tags column**
+- **Vectorizes tags using CountVectorizer**
+- **Computes Cosine Similarity**
+- **Saves:**
+    - `movies_data.pkl`
+    - `similarity.pkl`
+
+After processing, **make sure** both PKL files appear in your project directory.
+
+
+---
+
+# ▶️ Run the Application
+
+**Once PKL files are present:**
+```bash
+streamlit run app.py
+```
+---
+
+# 🌐 Internet Requirement
+
+**✔️ Offline →** Recommendation model (PKL + similarity)
+
+**✖️ Online →** Poster fetching via TMDB API
+
+Your PC **must be connected to internet when running the Streamlit app to load posters.**
+
+---
+
+
 
 # 🔑 TMDB API Setup (Important)
 
@@ -70,38 +137,6 @@ api_key = "YOUR_TMDB_API_KEY"
 
 ---
 
-# 🛠️ Full Preprocessing Guide 
-### ***(If Pickle Files Are Missing)***
-
-> #### If `movies_data.pkl` and `similarity.pkl` are not present, follow this guide.
-
-### Step 1 — Launch Jupyter Notebook
-```bash
-jupyter notebook
-```
-
-### Step 2 — Open and run `preprocess.ipynb`
-
-**The notebook performs:**
-
-- **Loading TMDB dataset**
-
-- **Cleaning genres, keywords, cast, crew**
-
-- **Creating a unified tags column**
-
-- **Vectorizing tags using CountVectorizer**
-
-- **Computing Cosine Similarity**
-
-- **Saving:**
-
-        - movies_data.pkl
-        - similarity.pkl
-
-**After running the notebook, ensure both files appear in your project directory.**
-
----
 
 # 📊 Dataset
 
