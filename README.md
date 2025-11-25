@@ -47,8 +47,8 @@ It recommends the **top 5 similar movies** based on a selected movie’s tags (g
 
 ## 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/your-username/movie-recommender-system.git
-cd movie-recommender-system
+git clone https://github.com/om-nagariya/movies-recommend-system.git
+cd movies-recommend-system
 ```
 
 ## 2️⃣ Install dependencies
@@ -66,8 +66,8 @@ pip install -r requirements.txt
 
 | File | Download Link |
 |------|---------------|
-| **tmdb_5000_movies.csv** | https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata |
-| **tmdb_5000_credits.csv** | https://www.kaggle.com/datasets/moraismcl/tmdb-5000-credits |
+| **tmdb_5000_movies.csv**<br>**tmdb_5000_credits.csv**| https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata |
+
 
 
 #### ➡ After downloading, place them directly in the project root directory (not inside any folder).
