@@ -20,7 +20,7 @@ def load_data():
 movies, similarity = load_data()
 
 # API configuration
-API_KEY = "779aeb53a5b1103b811d418042862f48" # Your api key
+API_KEY = "" # Your api key
 
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key={}&language=en-US".format(movie_id, API_KEY)
@@ -77,3 +77,4 @@ if st.button('Recommend'):
     for i, movie in enumerate(recommendations):
         poster_url = fetch_poster(movie['id'])
         placeholders[i].image(poster_url)
+
